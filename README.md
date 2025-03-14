@@ -1,4 +1,4 @@
-# 🚀 StockHome Web App - Docker Setup
+# 🚀 StockHome Web App - 
 
 This repository contains the **StockHome Web App** running on **Apache, PHP, and MongoDB** using **Docker**.
 
@@ -19,7 +19,7 @@ docker compose version
 ⚡️ How to Build & Run the Containers
 ## Clone the Repository
 ```sh
-git clone https://github.com/your-repo/stockhome.git
+git clone https://github.com/vignesh21-git/stockhome.git
 cd stockhome
 ```
 ## Build the Docker Image
