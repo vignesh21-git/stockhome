@@ -1,0 +1,7 @@
+{
+    "base_path": "/",
+    "database_conn_string": "mongodb://mongo:27017",
+    "database_main": "stockhome_db",
+    "username": "admin",
+    "password": "password"
+}   
