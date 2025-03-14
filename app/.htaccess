@@ -1,14 +1,20 @@
-ErrorDocument 404 /error.php
-ErrorDocument 500 "<H1>Some error, contact administrator</H1>"
-
+# Enable Rewrite Engine
 RewriteEngine On
 RewriteBase /
 
-RewriteRule ^/?files/([^/]+)?$ files.php?name=$1 [L,QSA,NC]
+# Custom Error Pages
+ErrorDocument 404 /error.php
+ErrorDocument 500 "<H1>Some error, contact administrator</H1>"
 
-RewriteRule ^/?api/([^/]+)?$ api.php?rquest=$1 [L,QSA,NC]
-RewriteRule ^/?api/([^/]+)/(.+)?$ api.php?rquest=$2&namespace=$1 [L,QSA,NC]
+# Route /files/{filename} to files.php?name={filename}
+RewriteRule ^files/([^/]+)$ files.php?name=$1 [L,QSA,NC]
 
+# Route /api/{request} to api.php?rquest={request}
+RewriteRule ^api/([^/]+)$ api.php?rquest=$1 [L,QSA,NC]
 
-RewriteCond %{REQUEST_FILENAME}\.php -f
+# Route /api/{namespace}/{request} to api.php?rquest={request}&namespace={namespace}
+RewriteRule ^api/([^/]+)/(.+)$ api.php?rquest=$2&namespace=$1 [L,QSA,NC]
+
+# Allow URLs without ".php" (Only if the file exists with .php extension)
+RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/.]+)$ $1.php [L]

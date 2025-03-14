@@ -1,28 +1,5 @@
 <?php
 
-if(isset($_POST['post_text']) and isset($_FILES['file'])){
-    $image_tmp = $_FILES['file']['tmp_name'];
-    echo $image_tmp;
-    $text = $_POST['post_text'];
-    Post::registerPost($text,$image_tmp);
-}
-
-
-// if(isset($_POST['post_text']) and isset($_FILES['file'])){
-//     // File path configuration 
-//     $uploadDir = $_SERVER['DOCUMENT_ROOT']."/uploads/"; 
-//     $fileName = basename($_FILES['file']['name']); 
-//     $text = $_POST['post_text'];
-//     $uploadFilePath = $uploadDir.$fileName;   
-//     // Upload file to server 
-//     if(move_uploaded_file($_FILES['file']['tmp_name'], $uploadFilePath)){ 
-//         Post::registerPost($text,$fileName);
-//     }else{
-
-//         die("Error in uploading");
-//     } 
-// }
-
 
 ?>
 <html>
